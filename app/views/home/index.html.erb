@@ -1,0 +1,96 @@
+
+
+
+	<h1 align="center">
+	<font color="483d8b" size=7 face="arial black" bgcolor="green">My Art Gallery</h1>
+	</font>
+	
+	<center>
+	<address>email:walchand@gmail.com<br/>
+		Contact No:9011581009</address>
+	</center>
+	<hr/>
+	<p align="center">
+<marquee scrollamount=12 direction="left" behavoiur="alternate"> <font color="green" size=4><h3>Creativity is allowing yourself to make mistakes. Art is knowing which ones to keep.
+	</h3></font>
+	</marquee>
+	</p>
+	<hr/>
+
+
+
+
+
+
+
+
+<div>
+	<ol>
+	<% @posts.each do |post|  %>
+	<li><%=link_to post.title ,"/post/#{post.id}" %> |
+		<%= link_to 'X', "/post/#{post.id}", method: :delete %>
+		<br>
+		
+	</li>
+	<% end %>
+		
+	</ol>	
+
+</div>
+
+
+
+	<center>
+	<div class="container">
+		<div class="row">
+		<%= form_for Post.new, url: '/post' do |f| %>
+		<div class="col-lg-4">
+			<label> Title </label>
+		</div>
+		<div class="col-lg-8">
+	  	<%= f.text_field :title %>
+	  </div>
+
+	  		<div class="col-lg-4">
+			<label> Content </label>
+		</div>
+		<div class="col-lg-8">
+	  	<%= f.text_area :content,  size: "60x12" %>
+	  </div>
+	  <div style="text-align: center">
+	  	<%= f.submit "Create" %>
+			</div>
+		<% end %>
+	</div>	
+</div><center>
+</div>
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
